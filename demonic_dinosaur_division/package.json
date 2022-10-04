@@ -52,6 +52,7 @@
     "dependencies": {
         "@mailchimp/mailchimp_marketing": "^3.0.78",
         "animated-scroll-to": "^2.3.0",
+        "blurhash": "^2.0.2",
         "hamburgers": "^1.2.1",
         "lightgallery": "^2.6.0",
         "overlayscrollbars": "^2.0.0-beta.1",

@@ -57,10 +57,19 @@
     margin-right: 1.25rem;
 }
 
-/* FAQ link */
-.footer__copyright-link {
+/* background running sctring */
+.footer__running-string {
+    animation-name: moveRunningStringFooter;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+/* FAQ button */
+.footer__copyright-button {
+    background-color: transparent;
     text-decoration: underline;
     transition: 0.3s ease;
+    cursor: pointer;
 
     &:hover,
     &:focus {
@@ -69,11 +78,98 @@
     }
 }
 
-/* background running sctring */
-.footer__running-string {
-    animation-name: moveRunningStringFooter;
-    transform: translateX(-50%);
-    left: 50%;
+.footerAccordion__wrapper{
+    height: 0;
+    transition: 0.5s linear;
+    overflow: hidden;
+}
+
+/* footer accordion */
+.footerAccordion {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 2rem 0 5rem;
+}
+
+/* single accordion item */
+.footerAccordion__item {
+    margin-bottom: 2rem;
+    overflow: hidden;
+    transition: 0.3s ease;
+    position: relative;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    /* styles when item is shown */
+    &.footerAccordion__item-active {
+        .footerAccordion__item-bullet {
+            &::after {
+                transform: translate(-50%, -35%) scale(0);
+            }
+        }
+    }
+}
+
+/* wrapper for a tilte and '+' icon */
+.footerAccordion__item-top {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    transition: 0.3s ease;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+/* '+' icon */
+.footerAccordion__item-bullet {
+    width: 1rem;
+    height: 0.25rem;
+    margin-right: 1rem;
+    background-color: $red;
+    position: relative;
+
+    &::after {
+        content: '';
+        width: 0.25rem;
+        height: 1rem;
+        background-color: $red;
+        transform: translate(-50%, -35%);
+        transition: 0.3s ease;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        z-index: 1;
+    }
+}
+/* accordion item title */
+.footerAccordion__item-title {
+    color: $light-red;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* accordion item main text */
+.footerAccordion__item-textWrapper {
+    padding-top: 1.5rem;
+    padding-left: 2rem;
+    line-height: 135%;
+    transition: 0.5s linear;
+}
+/* single text paragraph */
+.footerAccordion__item-paragraph {
+    margin-bottom: 1rem;
+    color: #FFFCED;
+    font-size: 0.9rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 /* ANIMATIONS */
@@ -102,5 +198,9 @@
 @media (max-width: $phone) {
     .footer__logo {
         transform: translateY(-75%);
+    }
+
+    .footerAccordion{
+        max-width: 90%;
     }
 }

@@ -104,6 +104,7 @@
     grid-column: 1;
     grid-row: 1;
     margin: auto auto 0;
+    position: relative;
     z-index: 1;
 
     &.image-loaded {
