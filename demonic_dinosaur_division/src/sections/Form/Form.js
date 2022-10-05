@@ -51,7 +51,7 @@ const handleFormSubmit = async (event) => {
         const body = await res.json();
         if (!res.ok) {
             // console.log(body.message);
-            Alert('danger', body.message);
+            Alert('error', body.message);
             return;
         }
         Alert('success', body.message);
@@ -61,7 +61,7 @@ const handleFormSubmit = async (event) => {
         emailInput.value = '';
     } catch (error) {
         console.log(error);
-        Alert('danger', 'Something went wrong');
+        Alert('error', 'Something went wrong');
     } finally {
         // Enable submit button
         submitButton.disabled = false;
