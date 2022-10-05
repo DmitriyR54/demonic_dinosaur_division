@@ -7,66 +7,68 @@ $warning: #ffd48a;
 $info: #2ff8fe;
 
 .alert {
-    width: 50%;
-    margin: 20px auto;
-    padding: 30px;
-    padding-right: 45px;
-    position: relative;
-    border-radius: 5px;
-    box-shadow: 0 0 15px 5px #222;
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 10px 10px;
+  // padding: 15px 30px;
+  padding-right: 34px;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 0 15px 5px #222;
 
-    position: fixed;
-    top: 0;
-    right: 20px;
-    z-index: 99;
-    opacity: 0;
-    transition: 2s ease;
+  position: fixed;
+  top: 54px;
+  right: 20px;
+  z-index: 99;
+  opacity: 0;
+  transition: 2s ease;
+  display: flex;
+  align-items: center;
+  color: #fff;
+
+  &__close {
     display: flex;
+    justify-content: center;
     align-items: center;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    opacity: 0.5;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50%;
+    right: 10px;
+    top: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+  }
 
-    &__close {
-        line-height: 1;
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        opacity: 0.5;
-        border-width: 1px;
-        border-style: solid;
-        border-radius: 50%;
-        right: 15px;
-        top: 15px;
-        text-align: center;
-        font-size: 1.3em;
-        cursor: pointer;
-    }
+  &__text {
+    font-family: $friary;
+    font-size: 0.8rem;
+  }
 
-    &__text {
-        font-family: $friary;
-    }
-
-    &__icon {
-        font-size: 2rem;
-        margin-right: 1rem;
-    }
+  &__icon {
+    font-size: 1.0rem;
+    margin-right: 10px;
+  }
 }
 
-@mixin alert($type, $bgColor) {
-    $accentColor: darken($bgColor, 50);
-    .#{$type} {
-        background-color: #{$bgColor};
-        border-left: 20px solid $accentColor;
-        .close {
-            border-color: $accentColor;
-            color: $accentColor;
-        }
-    }
-}
+.alert--default,
+.alert--success,
+.alert--error,
+.alert--info,
+.alert--warning,
+.alert--demonic {
+  $accentColor: darken($light-red, 50);
+  background-color: $light-red;
+  border-left: 20px solid $accentColor;
 
-/* All mixins accept a $bgColor of $light-red since one unique look is expected for all alert types
-$light-red should be swapped with the respective colors defined above for alert variations */
-@include alert(alert--simple, $light-red);
-@include alert(alert--success, $light-red);
-@include alert(alert--danger, $light-red);
-@include alert(alert--info, $light-red);
-@include alert(alert--warning, $light-red);
-@include alert(alert--demonic, $light-red);
+  .close {
+    border-color: $accentColor;
+    color: $accentColor;
+  }
+}
