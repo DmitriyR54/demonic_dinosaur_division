@@ -50,12 +50,23 @@
         "xml-loader": "^1.2.1"
     },
     "dependencies": {
-        "@mailchimp/mailchimp_marketing": "^3.0.78",
+        "@coinbase/wallet-sdk": "^3.5.2",
+        "@walletconnect/web3-provider": "^1.8.0",
         "animated-scroll-to": "^2.3.0",
+        "assert": "^2.0.0",
         "blurhash": "^2.0.2",
+        "buffer": "^6.0.3",
         "hamburgers": "^1.2.1",
+        "https-browserify": "^1.0.0",
         "lightgallery": "^2.6.0",
+        "os-browserify": "^0.3.0",
         "overlayscrollbars": "^2.0.0-beta.1",
-        "swiper": "^8.3.2"
+        "stream-browserify": "^3.0.0",
+        "stream-http": "^3.2.0",
+        "swiper": "^8.3.2",
+        "url": "^0.11.0",
+        "util": "^0.12.4",
+        "web3": "^1.8.0",
+        "web3modal": "^1.9.9"
     }
 }

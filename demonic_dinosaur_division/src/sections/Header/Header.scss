@@ -99,6 +99,12 @@
         }
     }
 
+    /* info styles - Account Id link */
+    &.header__nav-link-info {
+        background-color: #fff;
+        color: $black;
+    }
+    
     /* transition for svg icons */
     path {
         transition: 0.3s ease;

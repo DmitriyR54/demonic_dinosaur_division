@@ -3,25 +3,26 @@ import "./AlertPopUp.scss";
 
 const iconArray = {
   successIcon: '☑︎',
-  dangerIcon: '𐄂',
+  errorIcon: 'x',
   infoIcon: 'ℹ︎',
   warningIcon: '⚠︎'
 };
 
-// type = 'success' | 'danger' | 'info" | 'warning'
-const Alert = (type = "success", message) => {
+const DEFAULT = 'default';
 
+// type = 'success' | 'error' | 'info" | 'warning'
+const Alert = (type = DEFAULT, message) => {
   const alertDiv = document.createElement("div");
-  alertDiv.classList.add("alert", "alert--simple");
+  alertDiv.classList.add("alert", "alert--default");
   alertDiv.innerHTML = AlertHtml;
   document.body.append(alertDiv);
 
   // Add icon
-  document.querySelector(`.alert .alert__icon`).innerText = iconArray[`${type}Icon`];
+  if (type !== DEFAULT) document.querySelector(`.alert .alert__icon`).innerText = iconArray[`${type}Icon`];
 
   document
     .querySelector(`.alert`)
-    .classList.replace("alert--simple", `alert--${type}`);
+    .classList.replace("alert--default", `alert--${type}`);
   document.querySelector(`.alert .alert__text`).innerHTML = message;
 
   // Show Alert
